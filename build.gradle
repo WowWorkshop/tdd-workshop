@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.spotbugs:spotbugs-gradle-plugin:1.6.10"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "com.github.spotbugs"
+apply from: "plugins/checkstyle.gradle"
+apply from: "plugins/jacoco.gradle"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.4.0')
+    testImplementation('org.mockito:mockito-junit-jupiter:2.24.5')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+group = 'au.com.workshop'
+
+jar {
+    baseName = "tdd-workshop"
+    version = "0.1.0"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+idea.project {
+    vcs = 'Git'
+    jdkName = 1.8
+    languageLevel = 1.8
+}
+
+defaultTasks 'clean', 'build'
