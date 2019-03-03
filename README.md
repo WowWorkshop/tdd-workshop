@@ -32,9 +32,13 @@
     shouldThrowInvalidNumberExceptionGivenIllegalNumber
     ```
 * [Fizz Buzz Plus](http://codingdojo.org/kata/FizzBuzz/)
-* [Guess Game](./docs/GuessGame.md)
 
 ### Workshop 2
+* [Mob Programming](https://en.wikipedia.org/wiki/Mob_programming)
+* [Guess Game](./docs/GuessGame.md)
+   ```
+   
+   ```
 * [Mars Rover](http://kata-log.rocks/mars-rover-kata)
 * [Game of Life](http://codingdojo.org/kata/GameOfLife/)
 

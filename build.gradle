@@ -1,17 +1,5 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "gradle.plugin.com.github.spotbugs:spotbugs-gradle-plugin:1.6.10"
-    }
-}
-
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: "com.github.spotbugs"
 apply from: "plugins/checkstyle.gradle"
 apply from: "plugins/jacoco.gradle"
 
@@ -20,15 +8,16 @@ repositories {
 }
 
 dependencies {
+    implementation('org.apache.commons:commons-lang3:3.8.1')
     testImplementation('org.junit.jupiter:junit-jupiter:5.4.0')
     testImplementation('org.mockito:mockito-junit-jupiter:2.24.5')
 }
 
 test {
     useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
+//    testLogging {
+//        events "passed", "skipped", "failed"
+//    }
 }
 
 group = 'au.com.workshop'
