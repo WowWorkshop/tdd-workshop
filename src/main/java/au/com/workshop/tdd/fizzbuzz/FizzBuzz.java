@@ -18,7 +18,7 @@ public class FizzBuzz {
     }
 
     private String getFizz(int number) {
-        return number % THREE == 0 ? FIZZ : EMPTY;
+        return number % THREE == 0 || valueOf(number).contains("3") ? FIZZ : EMPTY;
     }
 
     private String getBuzz(int number) {
