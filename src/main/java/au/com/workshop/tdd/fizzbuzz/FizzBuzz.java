@@ -11,6 +11,9 @@ public class FizzBuzz {
     private static final int FIVE = 5;
 
     public String calculate(int number) {
+        if (number <= 0) {
+            throw new InvalidException();
+        }
         return defaultIfEmpty(getFizz(number) + getBuzz(number), valueOf(number));
     }
 

@@ -3,6 +3,7 @@ package au.com.workshop.tdd.fizzbuzz;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FizzBuzzTest {
     private static final String FIZZ = "Fizz";
@@ -37,4 +38,15 @@ public class FizzBuzzTest {
         assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(30));
         assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(45));
     }
+
+    @Test
+    void shouldThrowInvalidNumberExceptionGivenIllegalNumberZero() {
+        assertThrows(InvalidException.class, () -> fizzBuzz.calculate(0));
+    }
+
+    @Test
+    void shouldThrowInvalidNumberExceptionGivenIllegalNumberLessThanZero() {
+        assertThrows(InvalidException.class, () -> fizzBuzz.calculate(-2));
+    }
+
 }
