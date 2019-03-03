@@ -1,6 +1,9 @@
 package au.com.workshop.tdd.fizzbuzz;
 
+import org.apache.commons.lang3.StringUtils;
+
 import static java.lang.String.valueOf;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class FizzBuzz {
 
@@ -11,11 +14,9 @@ public class FizzBuzz {
     private static final int FIVE = 5;
 
     public String calculate(int number) {
-        String result = valueOf(number);
+        String result;
 
-        if (number % THREE == 0) {
-            result = FIZZ;
-        }
+        result = getFizz(number);
 
         if (number % FIVE == 0) {
             result = BUZZ;
@@ -24,6 +25,11 @@ public class FizzBuzz {
         if (number % 3 == 0 && number % 5 == 0) {
             result = FIZZ_BUZZ;
         }
-        return result;
+
+        return StringUtils.defaultIfEmpty(result, valueOf(number));
+    }
+
+    private String getFizz(int number) {
+        return number % THREE == 0 ? FIZZ : EMPTY;
     }
 }
