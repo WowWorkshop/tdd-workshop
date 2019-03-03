@@ -54,6 +54,13 @@ public class FizzBuzzTest {
     }
 
     @Test
+    void shouldReturnFizzBuzzGivenNumberHasBothThreeAndFiveInIt() {
+        assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(53));
+        assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(57));
+        assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(35));
+    }
+
+    @Test
     void shouldThrowInvalidNumberExceptionGivenIllegalNumberZero() {
         assertThrows(InvalidException.class, () -> fizzBuzz.calculate(0));
     }
