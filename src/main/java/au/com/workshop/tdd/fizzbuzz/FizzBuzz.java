@@ -7,8 +7,8 @@ import static org.apache.commons.lang3.StringUtils.defaultIfEmpty;
 public class FizzBuzz {
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
-    private static final int THREE = 3;
-    private static final int FIVE = 5;
+    private static final Integer THREE = 3;
+    private static final Integer FIVE = 5;
 
     public String calculate(int number) {
         if (number <= 0) {
@@ -18,10 +18,10 @@ public class FizzBuzz {
     }
 
     private String getFizz(int number) {
-        return number % THREE == 0 || valueOf(number).contains("3") ? FIZZ : EMPTY;
+        return number % THREE == 0 || valueOf(number).contains(THREE.toString()) ? FIZZ : EMPTY;
     }
 
     private String getBuzz(int number) {
-        return number % FIVE == 0 ? BUZZ : EMPTY;
+        return number % FIVE == 0 || valueOf(number).contains(FIVE.toString()) ? BUZZ : EMPTY;
     }
 }

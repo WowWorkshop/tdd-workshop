@@ -40,6 +40,13 @@ public class FizzBuzzTest {
     }
 
     @Test
+    void shouldReturnBuzzGiveNumberHasFiveInIt() {
+        assertEquals(BUZZ, fizzBuzz.calculate(25));
+        assertEquals(BUZZ, fizzBuzz.calculate(55));
+        assertEquals(BUZZ, fizzBuzz.calculate(85));
+    }
+
+    @Test
     void shouldReturnFizzBuzzGivenNumberCanBeDividedByBothThreeAndFive() {
         assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(15));
         assertEquals(FIZZ_BUZZ, fizzBuzz.calculate(30));
