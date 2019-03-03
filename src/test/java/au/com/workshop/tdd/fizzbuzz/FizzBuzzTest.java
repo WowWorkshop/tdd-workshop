@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FizzBuzzTest {
     private static final String FIZZ = "Fizz";
+    private static final String BUZZ = "Buzz";
     private final FizzBuzz fizzBuzz = new FizzBuzz();
 
     @Test
@@ -20,5 +21,12 @@ public class FizzBuzzTest {
         assertEquals(FIZZ, fizzBuzz.calculate(3));
         assertEquals(FIZZ, fizzBuzz.calculate(6));
         assertEquals(FIZZ, fizzBuzz.calculate(12));
+    }
+
+    @Test
+    void shouldReturnBuzzGiveNumberCanBeDividedByFive() {
+        assertEquals(BUZZ, fizzBuzz.calculate(5));
+        assertEquals(BUZZ, fizzBuzz.calculate(10));
+        assertEquals(BUZZ, fizzBuzz.calculate(20));
     }
 }
