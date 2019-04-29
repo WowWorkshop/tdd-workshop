@@ -10,15 +10,15 @@ public class FizzBuzz {
     private static final int FIVE = 5;
     private static final int THREE = 3;
 
-    public static String of(int number) {
-        if (number <= 0) {
-            throw new InvalidException("Invalid number: " + number);
+    public static String of(int input) {
+        if (input <= 0) {
+            throw new InvalidException(input);
         }
 
-        String fizz = calculate(number, FIZZ, THREE);
-        String buzz = calculate(number, BUZZ, FIVE);
+        String fizz = calculate(input, FIZZ, THREE);
+        String buzz = calculate(input, BUZZ, FIVE);
 
-        return defaultIfEmpty(fizz + buzz, valueOf(number));
+        return defaultIfEmpty(fizz + buzz, valueOf(input));
     }
 
     private static String calculate(int input, String word, int number) {

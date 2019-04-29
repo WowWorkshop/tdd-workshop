@@ -32,8 +32,8 @@ public class FizzBuzzTest {
             "57, 'FizzBuzz'",
 
     })
-    void testFizzBuzz(int number, String result) {
-        assertEquals(result, FizzBuzz.of(number));
+    void testFizzBuzz(int input, String word) {
+        assertEquals(word, FizzBuzz.of(input));
     }
 
     @Test
