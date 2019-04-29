@@ -16,11 +16,21 @@ public class FizzBuzzTest {
             "3, 'Fizz'",
             "6, 'Fizz'",
             "18, 'Fizz'",
+            "13, 'Fizz'",
+            "33, 'Fizz'",
+            "73, 'Fizz'",
             "5, 'Buzz'",
             "10, 'Buzz'",
             "50, 'Buzz'",
+            "25, 'Buzz'",
+            "55, 'Buzz'",
+            "85, 'Buzz'",
             "15, 'FizzBuzz'",
             "45, 'FizzBuzz'",
+            "35, 'FizzBuzz'",
+            "53, 'FizzBuzz'",
+            "57, 'FizzBuzz'",
+
     })
     void testFizzBuzz(int number, String result) {
         assertEquals(result, FizzBuzz.of(number));

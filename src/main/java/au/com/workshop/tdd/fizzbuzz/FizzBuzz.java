@@ -14,14 +14,14 @@ public class FizzBuzz {
         if (number <= 0) {
             throw new InvalidException("Invalid number: " + number);
         }
-        return defaultIfEmpty(getFizz(number) + getBuzz(number), valueOf(number));
+
+        String fizz = calculate(number, FIZZ, THREE);
+        String buzz = calculate(number, BUZZ, FIVE);
+
+        return defaultIfEmpty(fizz + buzz, valueOf(number));
     }
 
-    private static String getBuzz(int number) {
-        return number % FIVE == 0 ? BUZZ : EMPTY;
-    }
-
-    private static String getFizz(int number) {
-        return number % THREE == 0 ? FIZZ : EMPTY;
+    private static String calculate(int input, String word, int number) {
+        return input % number == 0 || valueOf(input).contains(valueOf(number)) ? word : EMPTY;
     }
 }
