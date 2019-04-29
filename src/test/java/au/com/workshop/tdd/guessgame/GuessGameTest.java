@@ -36,7 +36,7 @@ class GuessGameTest {
         assertEquals(expected, result);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "should throw exception given invalid input {0}")
     @ValueSource(strings = {"123", "12345", "abcd", "12.35"})
     void testInvalidInput(String input) {
         assertThrows(InvalidInput.class, () -> guessGame.guess(input));

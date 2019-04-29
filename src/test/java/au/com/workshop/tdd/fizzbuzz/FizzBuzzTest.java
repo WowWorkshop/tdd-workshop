@@ -1,8 +1,8 @@
 package au.com.workshop.tdd.fizzbuzz;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -36,14 +36,10 @@ public class FizzBuzzTest {
         assertEquals(word, FizzBuzz.of(input));
     }
 
-    @Test
-    void shouldThrowInvalidNumberExceptionGivenIllegalNumberZero() {
-        assertThrows(InvalidException.class, () -> FizzBuzz.of(0));
-    }
-
-    @Test
-    void shouldThrowInvalidNumberExceptionGivenIllegalNumberLessThanZero() {
-        assertThrows(InvalidException.class, () -> FizzBuzz.of(-2));
+    @ParameterizedTest(name = "should throw exception given invalid number {0}")
+    @ValueSource(ints = {0, -2})
+    void testInvalidInput(int input) {
+        assertThrows(InvalidException.class, () -> FizzBuzz.of(input));
     }
 
 }
