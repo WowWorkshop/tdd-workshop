@@ -24,21 +24,11 @@
 * Session in Slides
 * [Cyber Dojo](https://cyber-dojo.org/)
 * [Fizz Buzz](http://codingdojo.org/kata/FizzBuzz/)
-    ```
-    shouldReturnItselfGivenNumberCannotBeDivedByThreeOrFive
-    shouldReturnFizzGivenNumberCanBeDividedByThree
-    shouldReturnBuzzGiveNumberCanBeDividedByFive
-    shouldReturnFizzBuzzGivenNumberCanBeDividedByBothThreeAndFive
-    shouldThrowInvalidNumberExceptionGivenIllegalNumber
-    ```
 * [Fizz Buzz Plus](http://codingdojo.org/kata/FizzBuzz/)
 
 ### Workshop 2
 * [Mob Programming](https://en.wikipedia.org/wiki/Mob_programming)
 * [Guess Game](./docs/GuessGame.md)
-   ```
-   
-   ```
 * [Mars Rover](http://kata-log.rocks/mars-rover-kata)
 * [Game of Life](http://codingdojo.org/kata/GameOfLife/)
 
